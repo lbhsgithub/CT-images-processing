@@ -1,10 +1,10 @@
 ### CT-images-processing
+MATLAB program to excavete pore information of specimens by CT scan images. 
 start at 2019.01  
-Reason: Data extraction of specimens in master project (civil Engineering & material).  
-Object: Use MATLAB to excavate pore information of specimens by CT scan images.  
-![1 raw image](https://github.com/lbhsgithub/CT-images-processing/archived/images/1_raw_image.jpg) and 
-![2 image sequences](https://github.com/lbhsgithub/CT-images-processing/archived/images/2_image_sequences.png)  
-![3 3D rebuild image](https://github.com/lbhsgithub/CT-images-processing/archived/images/3_3D_rebuild_image.png)  
+Reason: A part of master project (civil Engineering & material), need pore information for further analysis.
+![1 raw image](https://github.com/lbhsgithub/CT-images-processing/blob/master/archived/images/1_raw_image.jpg) and 
+![2 image sequences](https://github.com/lbhsgithub/CT-images-processing/blob/master/archived/images/2_image_sequences.png)  
+![3 3D rebuild image](https://github.com/lbhsgithub/CT-images-processing/blob/master/archived/images/3_3D_rebuild_image.png)  
 (Z is sort order of image sequences)
 ### objective information
 - porosity and pore distribution of 2D images
@@ -26,17 +26,16 @@ Object: Use MATLAB to excavate pore information of specimens by CT scan images.
  - In this process air identification is an important part. 
  Generally air is the maximum connected components in every images or 3D rebuild image.
 Base on this identify method, such error will happen:   
-![4 boundary pore](https://github.com/lbhsgithub/snap-up_equipment/blob/master/code.jpeg)  
+![4 boundary pore](https://github.com/lbhsgithub/CT-images-processing/blob/master/archived/images/4.png)  
 and cause
-![5 boundary pore](https://github.com/lbhsgithub/snap-up_equipment/blob/master/code.jpeg)
-![6 boundary pore](https://github.com/lbhsgithub/snap-up_equipment/blob/master/code.jpeg)
+![5 boundary pore](https://github.com/lbhsgithub/CT-images-processing/blob/master/archived/images/4.png)
+![6 boundary pore](https://github.com/lbhsgithub/CT-images-processing/blob/master/archived/images/4.png)
  - In order to identify **boundary pore**, function *shape_filter* is create to seal boundary pore. *shape_filter* means filtrating connected components by shape and 
  seal means:  
-![7 after seal](https://github.com/lbhsgithub/snap-up_equipment/blob/master/code.jpeg)
+![7 after seal](https://github.com/lbhsgithub/CT-images-processing/blob/master/archived/images/7)
      - Idea 
         - Shape of a pore in continuous images along Z changes gradually. Find the images before and after the appearance of a **boundary pore** ,then subtract to get a number of connected components, which contains objective **boundary pore** and other interferential parts.
         - The shape of connected components would be long strip, diagonal strip, diagonal semicircle, perpendicular simicircle, ellipse or circle, in which perpendicular simicircle, ellipse and circle are **boundary pore** and should be identified.
-        ![7 after seal](https://github.com/lbhsgithub/snap-up_equipment/blob/master/code.jpeg), ![7 after seal](https://github.com/lbhsgithub/snap-up_equipment/blob/master/code.jpeg), ![7 after seal](https://github.com/lbhsgithub/snap-up_equipment/blob/master/code.jpeg), ![7 after seal](https://github.com/lbhsgithub/snap-up_equipment/blob/master/code.jpeg)
         - use *shape_filter* to filter out interferential parts.
         - easy to outline **boundary pore** by *bwboundaries*. Then **boundary pore** is sealed.
     - realize
@@ -51,7 +50,7 @@ and cause
 use *global struct* for possible item addition due to possible funciton addition.
 - file operation
     - record folder and images information as *global struct*
-    - see [structure of folders](https://note.youdao.com/)
+    - see [structure of folders](https://github.com/lbhsgithub/CT-images-processing/blob/master/file_operation/README.md)
 - parameters
     - set all parameters in one function, create *global struct*
 - mark_bubbles(unfinished)
