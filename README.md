@@ -2,9 +2,9 @@
 start at 2019.01  
 Reason: Data extraction of specimens in master project (civil Engineering & material).  
 Object: Use MATLAB to excavate pore information of specimens by CT scan images.  
-![1 raw image](./archived/images/1 raw image) and 
-![2 image sequences](https://github.com/lbhsgithub/snap-up_equipment/blob/master/code.jpeg)  
-![3 3D rebuild image](https://github.com/lbhsgithub/snap-up_equipment/blob/master/code.jpeg)  
+![1 raw image](https://github.com/lbhsgithub/CT-images-processing/archived/images/1 raw image.jpg) and 
+![2 image sequences](https://github.com/lbhsgithub/CT-images-processing/archived/images/2 image sequences.png)  
+![3 3D rebuild image](https://github.com/lbhsgithub/CT-images-processing/archived/images/3 3D rebuild image.png)  
 (Z is sort order of image sequences)
 ### objective information
 - porosity and pore distribution of 2D images
