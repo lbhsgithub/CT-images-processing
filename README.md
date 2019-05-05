@@ -1,7 +1,7 @@
 ### CT-images-processing
+MATLAB program to excavete pore information of specimens by CT scan images. 
 start at 2019.01  
-Reason: Data extraction of specimens in master project (civil Engineering & material).  
-Object: Use MATLAB to excavate pore information of specimens by CT scan images.  
+Reason: A part of master project (civil Engineering & material), need pore information for further analysis.
 ![1 raw image](https://github.com/lbhsgithub/CT-images-processing/blob/master/archived/images/1_raw_image.jpg) and 
 ![2 image sequences](https://github.com/lbhsgithub/CT-images-processing/blob/master/archived/images/2_image_sequences.png)  
 ![3 3D rebuild image](https://github.com/lbhsgithub/CT-images-processing/blob/master/archived/images/3_3D_rebuild_image.png)  
