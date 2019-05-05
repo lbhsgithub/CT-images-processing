@@ -50,7 +50,7 @@ and cause
 use *global struct* for possible item addition due to possible funciton addition.
 - file operation
     - record folder and images information as *global struct*
-    - see [structure of folders](https://note.youdao.com/)
+    - see [structure of folders](https://github.com/lbhsgithub/CT-images-processing/blob/master/file_operation/README.md)
 - parameters
     - set all parameters in one function, create *global struct*
 - mark_bubbles(unfinished)
