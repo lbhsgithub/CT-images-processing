@@ -1,0 +1,34 @@
+clear;
+load('AA.mat');
+% AA = AA( : , : ,1:100);
+CC = bwconncomp(AA,6);
+numPixels = cellfun(@numel, CC.PixelIdxList); 
+small = find(numPixels<600);
+for i=1:1:length(small)
+    a = small(i);
+    AA(CC.PixelIdxList{a})=0;end                  %以上是图像的预处理，包括去掉小孔，（去白边并没有做）
+
+CC = bwconncomp(AA,6);
+S1=CC.ImageSize(1);
+S2=CC.ImageSize(2);     %读取图像尺寸
+numPixels = cellfun(@numel, CC.PixelIdxList); 
+for i = 1:CC.NumObjects         %遍历每个孔
+    low = ceil(CC.PixelIdxList{1,i}(1)/(S1*S2));    %孔最小坐标所在Z平面
+    high = ceil(CC.PixelIdxList{1,i}(end)/(S1*S2));      %孔最大坐标所在Z平面
+    C = low:high;      %生成Z的向量
+    num_voxel = 0;      %把这个向量清零，不清零的话向量的大小会继承上一个i时的大小
+    for j = low:high      %对于每个Z平面
+        S = find(CC.PixelIdxList{1,i}<=j*S1*S2 & CC.PixelIdxList{1,i}>(j-1)*S1*S2);     %找到位于Z平面的点个数
+        num_voxel(j-low+1) = length(S);   %生成点个数的向量
+    end
+    value_counts = [C', num_voxel'];       %Z坐标和Z平面上找到的点数
+    freq(i,1)= max(num_voxel);           %找到最多的点数
+    [x,y] = find(value_counts == freq(i));        %找相应位置
+    cord_z(i,1) = value_counts(x(1),1);     %Z坐标就是最后绘制图像里面的横坐标位置     %这里感觉有些冗长，应该可以精简
+end
+    data = [cord_z,freq];       %生成数据组
+
+    
+    %对每一个一维遍历，用除法求Z坐标的效率很低，要算好久
+    %改变减小j循环的次数，计算变少（应该是提高效率的主要原因，之前要j算数万次）；find函数针对数组操作，应该是大小比较的判断，应该还是比除法计算效率高一些
+    %尚未验证
