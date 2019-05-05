@@ -26,17 +26,16 @@ Object: Use MATLAB to excavate pore information of specimens by CT scan images.
  - In this process air identification is an important part. 
  Generally air is the maximum connected components in every images or 3D rebuild image.
 Base on this identify method, such error will happen:   
-![4 boundary pore](https://github.com/lbhsgithub/snap-up_equipment/blob/master/code.jpeg)  
+![4 boundary pore](https://github.com/lbhsgithub/CT-images-processing/blob/master/archived/images/4 boundary pore.png)  
 and cause
-![5 boundary pore](https://github.com/lbhsgithub/snap-up_equipment/blob/master/code.jpeg)
-![6 boundary pore](https://github.com/lbhsgithub/snap-up_equipment/blob/master/code.jpeg)
+![5 boundary pore](https://github.com/lbhsgithub/CT-images-processing/blob/master/archived/images/4 boundary pore.png)
+![6 boundary pore](https://github.com/lbhsgithub/CT-images-processing/blob/master/archived/images/4 boundary pore.png)
  - In order to identify **boundary pore**, function *shape_filter* is create to seal boundary pore. *shape_filter* means filtrating connected components by shape and 
  seal means:  
-![7 after seal](https://github.com/lbhsgithub/snap-up_equipment/blob/master/code.jpeg)
+![7 after seal](https://github.com/lbhsgithub/CT-images-processing/blob/master/archived/images/7 after seal)
      - Idea 
         - Shape of a pore in continuous images along Z changes gradually. Find the images before and after the appearance of a **boundary pore** ,then subtract to get a number of connected components, which contains objective **boundary pore** and other interferential parts.
         - The shape of connected components would be long strip, diagonal strip, diagonal semicircle, perpendicular simicircle, ellipse or circle, in which perpendicular simicircle, ellipse and circle are **boundary pore** and should be identified.
-        ![7 after seal](https://github.com/lbhsgithub/snap-up_equipment/blob/master/code.jpeg), ![7 after seal](https://github.com/lbhsgithub/snap-up_equipment/blob/master/code.jpeg), ![7 after seal](https://github.com/lbhsgithub/snap-up_equipment/blob/master/code.jpeg), ![7 after seal](https://github.com/lbhsgithub/snap-up_equipment/blob/master/code.jpeg)
         - use *shape_filter* to filter out interferential parts.
         - easy to outline **boundary pore** by *bwboundaries*. Then **boundary pore** is sealed.
     - realize
