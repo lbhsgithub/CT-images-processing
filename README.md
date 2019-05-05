@@ -2,7 +2,7 @@
 start at 2019.01  
 Reason: Data extraction of specimens in master project (civil Engineering & material).  
 Object: Use MATLAB to excavate pore information of specimens by CT scan images.  
-![1 raw image](https://github.com/lbhsgithub/snap-up_equipment/blob/master/code.jpeg) and 
+![1 raw image](./archived/images/1 raw image) and 
 ![2 image sequences](https://github.com/lbhsgithub/snap-up_equipment/blob/master/code.jpeg)  
 ![3 3D rebuild image](https://github.com/lbhsgithub/snap-up_equipment/blob/master/code.jpeg)  
 (Z is sort order of image sequences)
