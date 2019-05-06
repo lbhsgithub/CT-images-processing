@@ -26,12 +26,11 @@
             - ... (number of ohther specimens)
     - ... (ohther recipes)
 
-#### content of two global struct
+#### content of three global struct
 - address
     - directory address (add new Key/value pair if need)
     - excel address
 - Is_info (images' information)
     - namelist (namelist of images)
-    - size (length size of 2D images and number of images as another length size in 3D image)
-- output £¨store output matrix£©
+    - size (size of 2D images and number of images as another size in 3D image)
 - Parameters (store all parameters and adjust in one function)
