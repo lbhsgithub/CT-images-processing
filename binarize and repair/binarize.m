@@ -1,21 +1,15 @@
 function binarize()
-    %% create folder
     global address
-    address.binarydir = [address.processeddir,'binarized','\'];
-    outputdir=address.binarydir;
-    if ~exist(outputdir,'dir')
-        mkdir(outputdir);
-    end
     %% initialize
     global Is_info
     num=Is_info.size(3);
     V=cell(num,2);
     %% repair from head to tail
     for i = 1 : num
-        %二值化
-        p = imread([address.oridir,Is_info.namelist{i},'.jpg']);
+        %binarize
+        p = imread([address.raw_images_dir,Is_info.namelist{i},'.jpg']);
         p = rgb2gray(p);p = imbinarize(p,graythresh(p));
-        %存入大矩阵
+        % save in 3D matrix(cell) V 
         V{i,1}=~p;
         V{i,2}=~imfill(p,'hole');
         if i~=1
@@ -27,7 +21,7 @@ function binarize()
         if i~=num
             V=repair(V,i,-1);
         end
-        savepath = [outputdir,Is_info.namelist{i},'.bmp'] ;
+        savepath = [address.binarized_dir,Is_info.namelist{i},'.bmp'] ;
         imwrite(V{i,1},savepath);
     end
 end

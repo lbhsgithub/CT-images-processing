@@ -4,7 +4,7 @@ function plot_frame
     global Parameters
     num=Is_info.size(3);x = 1:num;
     %较大孔孔隙大小 避免有NaN导致的问题
-    [~,~,a]=xlsread(address.dataxlsx,'major pore',['B1:B',num2str(num)]); %空值不读取，导致了位置误差
+    [~,~,a]=xlsread(address.dataxlsx,'major_pore',['B1:B',num2str(num)]); %空值不读取，导致了位置误差
     a=cell2mat(a);a(isnan(a))=0;a=Cize(a,2);MP=a;
     %较大孔最大截面积
     b=xlsread(address.dataxlsx,'MPmaxSection','A:B');b(:,1)=Cize(b(:,1),2);MS=b;

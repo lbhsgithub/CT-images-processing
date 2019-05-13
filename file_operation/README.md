@@ -21,7 +21,7 @@
             - 1 (sheet name) 
                 - rank A : time
                 - rank B : strain
-                - rank c : strength
+                - rank C : strength
                 - ... (other information)
             - ... (number of ohther specimens)
     - ... (ohther recipes)

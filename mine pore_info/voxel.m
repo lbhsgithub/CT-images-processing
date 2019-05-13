@@ -25,9 +25,9 @@ function [V,Sair]=voxel(Va)
         end
     end
     %% eliminate air and save
-    global output
-    output.max_section=max_section(2:end,:);
-    output.Voxelslist=Voxelslist(2:end);
+    global pore_data
+    pore_data.MPmaxSection = max_section(2:end,:);
+    pore_data.distribution_3D = Voxelslist(2:end);
     %% return for next step
     Sair=S{1}(:,1);     %Sair for each image
 end

@@ -7,7 +7,6 @@ min_c=0.4;
 Parameters.min_volume = min_c^3*4/3*pi/(0.08565574^2*0.1);
 %% critical c for crack
 % in .\plot\Plot.m
-Parameters.Ccrit = 1;
+Parameters.c_critical = 1;
 %% open('\CT-images-processing\2ize and repair\shape_filter.m')
 end
-
