@@ -24,8 +24,7 @@ Reason: A part of master project (civil Engineering & material), need pore infor
 ### other problem
  - In this process air identification is an important part. 
  Generally air is the maximum connected components in every images or 3D rebuild image.
-Base on this identify method, such error will happen:
- - In order to identify **boundary pore**, function *shape_filter* is create to seal boundary pore. *shape_filter* means filtrating connected components by shape.  
+Base on this identify method, such error will happen. In order to identify **boundary pore**, function *shape_filter* is create to seal boundary pore. [shape_filter](https://github.com/lbhsgithub/shape_filter) means filtrating connected components by shape.  
 ![7 repair](https://github.com/lbhsgithub/shape_filter/blob/master/archived/images/repair.png)
      - Idea 
         - Shape of a pore in continuous images along Z changes gradually. Find the images before and after the appearance of a **boundary pore** ,then subtract to get a number of connected components, which contains objective **boundary pore** and other interferential parts.
