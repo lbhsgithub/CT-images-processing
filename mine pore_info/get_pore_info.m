@@ -1,12 +1,12 @@
 function get_pore_info
-    Va = readIs;
-    [V,Sair] = voxel(Va);
-    slice_porosity_distribution(V,Sair);
+    V_allpore_withair = readIs;
+    V_majorpore_withair = voxel(V_allpore_withair);
+    slice_porosity_distribution(V_allpore_withair,V_majorpore_withair);
     save_xlsx;
 end
 
-function V=readIs() 
-%load images only once here,<1min
+function V = readIs() 
+%load image sequence in V (allpore)
     global address
     global Is_info
     V=false(Is_info.size(1:3));

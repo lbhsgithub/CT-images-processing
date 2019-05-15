@@ -6,12 +6,15 @@ addpath(genpath(pwd))
     %% set all parameters in one function
     % global parameters
     parameters;
-    %% (not start) brightness adjustment
+    %% brightness adjustment
+    brightness_adjustment;
 %%% CT
+    %% (unstart) crack in CT image
+    % crack;
     %% (unfinished) mark_bubbles
     % mark_bubbles;
     %% print sideface of 3D image, used in processing background image
-    printsideface;
+    % printsideface;
     %% repair and binarize images
     binarize;
     %% get pore information in images

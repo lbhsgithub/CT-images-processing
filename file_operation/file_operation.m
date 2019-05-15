@@ -26,9 +26,10 @@ function file_operation
     binarized_dir = [processed_dir,'binarized\'];
     major_pore_dir = [processed_dir,'major_pore\'];
     all_pore_dir = [processed_dir,'all_pore\'];
+    adjusted_dir = [processed_dir,'adjusted\'];
     dataxlsx = [No_dir,'pore_data.xlsx'];
     tensile_dataxlsx = [date,'\tensile_data.xlsx'];
-    for i=["No_path" "No_dir"  "raw_images_path" "raw_images_dir" "processed_dir" "binarized_dir" "major_pore_dir" "all_pore_dir"...
+    for i=["No_path" "No_dir"  "raw_images_path" "raw_images_dir" "processed_dir" "binarized_dir" "major_pore_dir" "all_pore_dir" "adjusted_dir"...
            "dataxlsx" "tensile_dataxlsx" ...
            "No"]
         eval(['address.',char(i),'=',char(i)])
