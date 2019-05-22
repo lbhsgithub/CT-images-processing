@@ -11,7 +11,7 @@ function binarize()
         p = rgb2gray(p);p = imbinarize(p,graythresh(p));
         % save in 3D matrix(cell) V 
         V{i,1}=~p;
-        V{i,2}=~imfill(p,'hole');
+        V{i,2}=~imfill(p,'hole');  % equal to isolate the part of air
         if i~=1
             V=repair(V,i,1);
         end
