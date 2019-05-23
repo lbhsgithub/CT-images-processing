@@ -11,8 +11,8 @@ addpath(genpath(pwd))
 %%% CT
     %% (unstart) crack in CT image
     % crack;
-    %% (unfinished) mark_bubbles
-    % mark_bubbles;
+    %% emptying_bubbles,replaced by hollow
+    bubbles2pore;
     %% print sideface of 3D image, used in processing background image
     % printsideface;
     %% repair and binarize images
